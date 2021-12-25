@@ -600,47 +600,47 @@ function ColumnToRow(arr, colu): number[] {
     return newArr;
 }
 
-// // идентификаторы, обозначающие одномерные массивы, состоящие из столбцов двумерного массива mass
-// let Sg: number[];
-// let Sc: number[];
-// let Sh: number[];
-// let V: number[];
-// let t: number[];
-// let step: number[];
-//
-// const calculat = document.querySelector('.startCalculation');
-//
-// const Lzu: number[] = [890, 540, 640, 740, 790, 690, 590, 715, 840, 565];
-// const Izv: number[] = [5.50, 5.75, 6.25, 6.50, 6.75, 7.00, 7.25, 7.50, 7.75, 8.00];
-//
-// /* формирование одномерных массивов отражающих столбцы (ордината головы поезда, ордината центра поезда, ордината хвоста поезда, скорость, время, номер шага) таблицы приложения 1 методических указаний */
-// Sg = ColumnToRow(mass, 0);
-// Sc = ColumnToRow(mass, 1);
-// Sh = ColumnToRow(mass, 2);
-// V = ColumnToRow(mass, 3);
-// t = ColumnToRow(mass, 4);
-// step = ColumnToRow(mass, 6);
-//
-// /* функция поиска элемента в массиве: в функцию передается массив и число которое требуется найти либо ближайшее округляя в большую сторону */
-// const srchInArr = function searchInArray(array, n) {
-//     for (let i = 0; i < array.length; i++) {
-//         if (array[i] >= n) {
-//             return [i, array[i]];
-//         }
-//     }
-// }
-//
-// let lzu, Iz;
-//
-// // исходные данные
-// let lzuv = document.querySelector('.lzu');
-//
-// let Ir;
-// let S2 = 8000, S3, S4, S5, S6, S7, S8, S9, S10;
-// let Szu5, Szu6, Szu7, Szu8, Szu9;
-// let Thzu5, Thzu6, Thzu7, Thzu8, Thzu9;
-// let Tg2, Tg3, Tg4, Tg5, Tg6;
-//
+// идентификаторы, обозначающие одномерные массивы, состоящие из столбцов двумерного массива mass
+let Sg: number[];
+let Sc: number[];
+let Sh: number[];
+let V: number[];
+let t: number[];
+let step: number[];
+
+const calculat = document.querySelector('.startCalculation');
+
+const Lzu: number[] = [890, 540, 640, 740, 790, 690, 590, 715, 840, 565];
+const Izv: number[] = [5.50, 5.75, 6.25, 6.50, 6.75, 7.00, 7.25, 7.50, 7.75, 8.00];
+
+/* формирование одномерных массивов отражающих столбцы (ордината головы поезда, ордината центра поезда, ордината хвоста поезда, скорость, время, номер шага) таблицы приложения 1 методических указаний */
+Sg = ColumnToRow(mass, 0);
+Sc = ColumnToRow(mass, 1);
+Sh = ColumnToRow(mass, 2);
+V = ColumnToRow(mass, 3);
+t = ColumnToRow(mass, 4);
+step = ColumnToRow(mass, 6);
+
+ /* функция поиска элемента в массиве: в функцию передается массив и число которое требуется найти либо ближайшее округляя в большую сторону */
+const srchInArr = function searchInArray(array:number[], n:number): number[] {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= n) {
+            return [i, array[i]];
+        }
+    }
+}
+
+let lzu: number, Iz: number;
+
+// исходные данные
+let lzuv = document.querySelector('.lzu');
+
+let Ir: number;
+let S2: number = 8000, S3: number, S4: number, S5: number, S6: number, S7: number, S8: number, S9: number, S10: number;
+let Szu5: number, Szu6: number, Szu7: number, Szu8: number, Szu9: number;
+let Thzu5: number, Thzu6: number, Thzu7: number, Thzu8: number, Thzu9: number;
+let Tg2: number, Tg3: number, Tg4: number, Tg5: number, Tg6: number;
+
 // calculat.onclick = () => {
 //     lzu = Lzu[lzuv.value[0]];
 //     Iz = Izv[lzuv.value[1]];
