@@ -641,12 +641,12 @@ let Szu5: number, Szu6: number, Szu7: number, Szu8: number, Szu9: number;
 let Thzu5: number, Thzu6: number, Thzu7: number, Thzu8: number, Thzu9: number;
 let Tg2: number, Tg3: number, Tg4: number, Tg5: number, Tg6: number;
 
-// calculat.onclick = () => {
-//     lzu = Lzu[lzuv.value[0]];
-//     Iz = Izv[lzuv.value[1]];
-//     calcBU();
-// }
-//
+calculat.onclick = () => {
+    lzu = Lzu[lzuv.value[0]];
+    Iz = Izv[lzuv.value[1]];
+    calcBU();
+}
+
 // lzuv.addEventListener('keydown', function(e) {
 //     if (e.keyCode === 13) {
 //         lzu = Lzu[lzuv.value[0]];
