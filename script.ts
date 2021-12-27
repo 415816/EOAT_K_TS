@@ -647,14 +647,14 @@ calculat.onclick = () => {
     calcBU();
 }
 
-// lzuv.addEventListener('keydown', function(e) {
-//     if (e.keyCode === 13) {
-//         lzu = Lzu[lzuv.value[0]];
-//         Iz = Izv[lzuv.value[1]];
-//         calcBU();
-//     }
-// })
-//
+lzuv.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        lzu = Lzu[lzuv.value[0]];
+        Iz = Izv[lzuv.value[1]];
+        calcBU();
+    }
+})
+
 // // функция определения ординаты светофоров одинаковой серии
 // function identicalSeries(Sg1, Iz) {
 //     let Tg1, Thzu4, Szu4, S4;
