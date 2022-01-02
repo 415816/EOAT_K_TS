@@ -655,19 +655,19 @@ lzuv.addEventListener('keydown', function(e) {
     }
 })
 
-// // функция определения ординаты светофоров одинаковой серии
-// function identicalSeries(Sg1, Iz) {
-//     let Tg1, Thzu4, Szu4, S4;
-//     Tg1 = +t[srchInArr(Sg, Sg1)[0]];
-//     Thzu4 = +((+Tg1 + (Iz * 0.9 * 60)).toFixed(1));
-//     if (Thzu4 >= 591.2) {
-//         return [Tg1, Thzu4, 17125 + lzu, 17125];
-//     }
-//     Szu4 = +Sh[srchInArr(t, Thzu4)[0]];
-//     S4 = Szu4 - lzu;
-//     return [Tg1, Thzu4, Szu4, S4];
-// }
-//
+// функция определения ординаты светофоров одинаковой серии
+function identicalSeries(Sg1, Iz) {
+    let Tg1, Thzu4, Szu4, S4;
+    Tg1 = +t[srchInArr(Sg, Sg1)[0]];
+    Thzu4 = +((+Tg1 + (Iz * 0.9 * 60)).toFixed(1));
+    if (Thzu4 >= 591.2) {
+        return [Tg1, Thzu4, 17125 + lzu, 17125];
+    }
+    Szu4 = +Sh[srchInArr(t, Thzu4)[0]];
+    S4 = Szu4 - lzu;
+    return [Tg1, Thzu4, Szu4, S4];
+}
+
 // // функция определения ординат светофоров разных серий (для 3х блок-участков)
 // function defferentSeries3(Sc1, Sc4) {
 //     let Tc1, Tc2, Tc3, Tc4, S2, S3, V2, V3;
