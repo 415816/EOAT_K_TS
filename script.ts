@@ -608,7 +608,7 @@ let V: number[];
 let t: number[];
 let step: number[];
 
-const calculat = document.querySelector('.startCalculation');
+const calculat: any = document.querySelector('.startCalculation');
 
 const Lzu: number[] = [890, 540, 640, 740, 790, 690, 590, 715, 840, 565];
 const Izv: number[] = [5.50, 5.75, 6.25, 6.50, 6.75, 7.00, 7.25, 7.50, 7.75, 8.00];
@@ -633,7 +633,7 @@ const srchInArr = function searchInArray(array:number[], n:number): number[] {
 let lzu: number, Iz: number;
 
 // исходные данные
-let lzuv = document.querySelector('.lzu');
+let lzuv: any = document.querySelector('.lzu');
 
 let Ir: number;
 let S2: number = 8000, S3: number, S4: number, S5: number, S6: number, S7: number, S8: number, S9: number, S10: number;
