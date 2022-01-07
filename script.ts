@@ -718,251 +718,250 @@ function check(S2: number, S1: number): number[] {
     return [S2, S1, Vg1];
 }
 
-// function calcBU() {
-//     Ir = Iz * 0.9 * 60;
-//     console.log('Iз = ' + Iz);
-//     console.log('Ip = ' + Ir);
-//     console.log('lзу = ' + lzu);
-//     // определение ординаты светофора 5
-//     console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5');
-//     Tg2 = identicalSeries(S2, Iz)[0];
-//     Thzu5 = identicalSeries(S2, Iz)[1];
-//     Szu5 = identicalSeries(S2, Iz)[2];
-//     S5 = identicalSeries(S2, Iz)[3];
-//     console.log('Тг2 = ' + Tg2);
-//     console.log('Тхзу5 = ' + Thzu5);
-//     console.log('Тхзу5 = ' + Szu5);
-//     console.log('S5 = ' + S5);
-//
-//     // определение ординаты светофора 3 (для случая, когда расстояние между 2 и 5 меньше 3000м)
-//     if (S5 - S2 < 3000) {
-//         S4 = +S5;
-//         S5 = 0;
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 3');
-//         console.log('S4 = ' + S4);
-//         Tc2 = defferentSeries2(S2, S4)[0];
-//         Tc4 = defferentSeries2(S2, S4)[1];
-//         Tc3 = defferentSeries2(S2, S4)[2];
-//         S3 = +defferentSeries2(S2, S4)[3];
-//         V3 = +defferentSeries2(S2, S4)[4];
-//         console.log('Тц2 = ' + Tc2);
-//         console.log('Тц4 = ' + Tc4);
-//         console.log('Тц3 = ' + Tc3);
-//         console.log('S3 = ' + S3);
-//         console.log('V3 = ' + V3);
-//
-//         S3 = check(S3, S2)[0];
-//         if ((S9 == 17125 && S8 == 15656) || (S8 == 17125 && S7 == 15656) || (S6 == 17125 && S5 == 15656)) {
-//             return false;
-//         }
-//         S2 = check(S3, S2)[1];
-//         S4 = check(S4, S3)[0];
-//         S3 = check(S4, S3)[1];
-//
-//         // определение ординат светофоров 3 и 4 (для случая, когда расстояние между 2 и 5 больше 3000м)
-//     } else {
-//         Tc2 = defferentSeries3(S2, S5)[0];
-//         Tc3 = defferentSeries3(S2, S5)[1];
-//         Tc4 = defferentSeries3(S2, S5)[2];
-//         Tc5 = defferentSeries3(S2, S5)[3];
-//         S3 = +defferentSeries3(S2, S5)[4];
-//         S4 = +defferentSeries3(S2, S5)[5];
-//         V3 = +defferentSeries3(S2, S5)[6];
-//         V4 = +defferentSeries3(S2, S5)[7];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТ СВЕТОФРОВ 3 И 4');
-//         console.log('Тц2 = ' + Tc2);
-//         console.log('Тц3 = ' + Tc3);
-//         console.log('Тц4 = ' + Tc4);
-//         console.log('Тц5 = ' + Tc5);
-//         console.log('S3 = ' + S3);
-//         console.log('S4 = ' + S4);
-//         console.log('V3 = ' + V3);
-//         console.log('V4 = ' + V4);
-//         S3 = check(S3, S2)[0];
-//         S4 = check(S4, S3)[0];
-//         S5 = check(S5, S4)[0];
-//     }
-//
-//     // определение ординаты светофора 6
-//     if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
-//         Tg3 = identicalSeries(S3, Iz)[0];
-//         Thzu6 = identicalSeries(S3, Iz)[1];
-//         Szu6 = identicalSeries(S3, Iz)[2];
-//         S6 = +identicalSeries(S3, Iz)[3];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 6');
-//         console.log('Тг3 = ' + Tg3);
-//         console.log('Тхзу6 = ' + Thzu6);
-//         console.log('Sзу6 = ' + Szu6);
-//         console.log('S6 = ' + S6);
-//         S6 = check(S6, S5)[0];
-//         V5 = check(S6, S5)[2];
-//         console.log('V5 = ' + V5);
-//         if (S6 == 17125 && (S6 - S5 > 1500)) {
-//             S7 = 17125;
-//             console.log('S6 - S5 > 1500 => S7 = 171+25, S6 = 161+25');
-//             S6 = 16125;
-//             S6 = check(S7, S6)[1];
-//             console.log('V5 = ' + V5);
-//             console.log('S6 = ' + S6);
-//             if (S6 - S5 > 2200) {
-//                 S8 = S7;
-//                 S7 = S6;
-//                 console.log('S6 - S5 > 2200 => S8 = ' + S8 + ' S7 = ' + S6);
-//                 Tc5 = defferentSeries2(S5, S7)[0];
-//                 Tc7 = defferentSeries2(S5, S7)[1];
-//                 Tc6 = defferentSeries2(S5, S7)[2];
-//                 S6 = +defferentSeries2(S5, S7)[3];
-//                 console.log('Тц5 = ' + Tc5);
-//                 console.log('Тц7 = ' + Tc7);
-//                 console.log('Тц6 = ' + Tc6);
-//                 console.log('S6 = ' + S6);
-//                 console.log('V5 = ' + V5);
-//             }
-//
-//             S6 = check(S7, S6)[1];
-//             S5 = check(S6, S5)[1];
-//             S4 = check(S5, S4)[1];
-//             console.log('S6 = ' + S6);
-//             console.log('S5 = ' + S5);
-//             console.log('S4 = ' + S4);
-//             console.log('S3 = ' + S3);
-//             console.log('S2 = ' + S2);
-//
-//         }
-//     }
-//
-//     // определение ординаты светофора 5 (для случая, когда расстояние между 2 и 5 было меньше 3000м)
-//     if (S5 == 0) {
-//         Tc4 = defferentSeries2(S4, S6)[0];
-//         Tc6 = defferentSeries2(S4, S6)[1];
-//         Tc5 = defferentSeries2(S4, S6)[2];
-//         S5 = +defferentSeries2(S4, S6)[3];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5');
-//         console.log('Тц4 = ' + Tc4);
-//         console.log('Тц6 = ' + Tc6);
-//         console.log('Тц5 = ' + Tc5);
-//         console.log('S5 = ' + S5);
-//         S5 = check(S5, S4)[0];
-//         S6 = check(S6, S5)[0];
-//         V4 = check(S5, S4)[2];
-//         V5 = check(S6, S5)[2];
-//         console.log('V4 = ' + V4);
-//         console.log('V5 = ' + V5);
-//     }
-//
-//     // определение ординаты светофора 7
-//     if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
-//         Tg4 = identicalSeries(S4, Iz)[0];
-//         Thzu7 = identicalSeries(S4, Iz)[1];
-//         Szu7 = identicalSeries(S4, Iz)[2];
-//         S7 = +identicalSeries(S4, Iz)[3];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 7');
-//         console.log('Тг4 = ' + Tg4);
-//         console.log('Тхзу7 = ' + Thzu7);
-//         console.log('Sзу7 = ' + Szu7);
-//         console.log('S7 = ' + S7);
-//         S7 = check(S7, S6)[0];
-//         V6 = check(S7, S6)[2];
-//         console.log('V6 = ' + V6)
-//         if (S7 == 17125 && (S7 - S6 > 1500)) {
-//             console.log('S7 - S6 > 1500');
-//             S8 = 17125;
-//             console.log('S8 = ' + S8);
-//             S7 = 16125;
-//             console.log('S7 = ' + S7);
-//             S7 = check(S8, S7)[1];
-//             S6 = check(S7, S6)[1];
-//             S5 = check(S6, S5)[1];
-//             S4 = check(S5, S4)[1];
-//             console.log('S7 = ' + S7);
-//             console.log('S6 = ' + S6);
-//             console.log('S5 = ' + S5);
-//             console.log('S4 = ' + S4);
-//             console.log('S3 = ' + S3);
-//             console.log('S2 = ' + S2);
-//         }
-//     }
-//
-//     // определение ординаты светофора 8
-//     if (S7 != 17125 && S8 != 17125) {
-//         Tg5 = identicalSeries(S5, Iz)[0];
-//         Thzu8 = identicalSeries(S5, Iz)[1];
-//         Szu8 = identicalSeries(S5, Iz)[2];
-//         S8 = +identicalSeries(S5, Iz)[3];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 8');
-//         console.log('Тг5 = ' + Tg5);
-//         console.log('Тхзу8 = ' + Thzu8);
-//         console.log('Sзу8 = ' + Szu8);
-//         console.log('S8 = ' + S8);
-//         S8 = check(S8, S7)[0];
-//         V7 = check(S8, S7)[2];
-//         console.log('V7 = ' + V7);
-//         if (S8 == 17125 && (S8 - S7 > 1500)) {
-//             console.log('S8 - S7 > 1500');
-//             S9 = 17125;
-//             console.log('S9 = ' + S9);
-//             S8 = 16125;
-//             console.log('S8 = ' + S8);
-//             S8 = check(S9, S8)[1];
-//             S7 = check(S8, S7)[1];
-//             S6 = check(S7, S6)[1];
-//             S5 = check(S6, S5)[1];
-//             S4 = check(S5, S4)[1];
-//             console.log('S8 = ' + S8);
-//             console.log('S7 = ' + S7);
-//             console.log('S6 = ' + S6);
-//             console.log('S5 = ' + S5);
-//             console.log('S4 = ' + S4);
-//             console.log('S3 = ' + S3);
-//             console.log('S2 = ' + S2);
-//         }
-//         S7 = check(S8, S7)[1];
-//         S6 = check(S7, S6)[1];
-//         S5 = check(S6, S5)[1];
-//         S4 = check(S5, S4)[1];
-//         console.log('S7 = ' + S7);
-//         console.log('S6 = ' + S6);
-//         console.log('S5 = ' + S5);
-//         console.log('S4 = ' + S4);
-//         console.log('S3 = ' + S3);
-//         console.log('S2 = ' + S2);
-//     }
-//
-//     // определение ординаты светофора 9
-//     if (S7 != 17125 && S8 != 17125 && S9 != 17125) {
-//         Tg6 = identicalSeries(S6, Iz)[0];
-//         Thzu9 = identicalSeries(S6, Iz)[1];
-//         Szu9 = identicalSeries(S6, Iz)[2];
-//         S9 = +identicalSeries(S6, Iz)[3];
-//         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 9');
-//         console.log('Тг6 = ' + Tg6);
-//         console.log('Тхзу9 = ' + Thzu9);
-//         console.log('Sзу9 = ' + Szu9);
-//         console.log('S9 = ' + S9);
-//         S9 = check(S9, S8)[0];
-//         V8 = check(S9, S8)[2];
-//         console.log('V8 = ' + V8);
-//         if (S9 == 17125 && (S9 - S8 > 1500)) {
-//             console.log('S9 - S8 > 1500');
-//             S10 = 17125;
-//             console.log('S10 = ' + S10);
-//             S9 = 16125;
-//             console.log('S9 = ' + S9);
-//             S9 = check(S10, S9)[1];
-//             S8 = check(S9, S8)[1];
-//             S7 = check(S8, S7)[1];
-//             S6 = check(S7, S6)[1];
-//             S5 = check(S6, S5)[1];
-//             S4 = check(S5, S4)[1];
-//             console.log('S9 = ' + S9);
-//             console.log('S8 = ' + S8);
-//             console.log('S7 = ' + S7);
-//             console.log('S6 = ' + S6);
-//             console.log('S5 = ' + S5);
-//             console.log('S4 = ' + S4);
-//             console.log('S3 = ' + S3);
-//             console.log('S2 = ' + S2);
-//         }
-//     }
-//
-// }
+function calcBU() {
+    Ir = Iz * 0.9 * 60;
+    console.log('Iз = ' + Iz);
+    console.log('Ip = ' + Ir);
+    console.log('lзу = ' + lzu);
+    // определение ординаты светофора 5
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5');
+    Tg2 = identicalSeries(S2, Iz)[0];
+    Thzu5 = identicalSeries(S2, Iz)[1];
+    Szu5 = identicalSeries(S2, Iz)[2];
+    S5 = identicalSeries(S2, Iz)[3];
+    console.log('Тг2 = ' + Tg2);
+    console.log('Тхзу5 = ' + Thzu5);
+    console.log('Тхзу5 = ' + Szu5);
+    console.log('S5 = ' + S5);
+
+    // определение ординаты светофора 3 (для случая, когда расстояние между 2 и 5 меньше 3000м)
+    if (S5 - S2 < 3000) {
+        S4 = +S5;
+        S5 = 0;
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 3');
+        console.log('S4 = ' + S4);
+        let Tc2 = defferentSeries2(S2, S4)[0];
+        let Tc4 = defferentSeries2(S2, S4)[1];
+        let Tc3 = defferentSeries2(S2, S4)[2];
+        S3 = defferentSeries2(S2, S4)[3];
+        let V3 = defferentSeries2(S2, S4)[4];
+        console.log('Тц2 = ' + Tc2);
+        console.log('Тц4 = ' + Tc4);
+        console.log('Тц3 = ' + Tc3);
+        console.log('S3 = ' + S3);
+        console.log('V3 = ' + V3);
+
+        S3 = check(S3, S2)[0];
+        if ((S9 == 17125 && S8 == 15656) || (S8 == 17125 && S7 == 15656) || (S6 == 17125 && S5 == 15656)) {
+            return false;
+        }
+        S2 = check(S3, S2)[1];
+        S4 = check(S4, S3)[0];
+        S3 = check(S4, S3)[1];
+
+        // определение ординат светофоров 3 и 4 (для случая, когда расстояние между 2 и 5 больше 3000м)
+    } else {
+        let Tc2 = defferentSeries3(S2, S5)[0];
+        let Tc3 = defferentSeries3(S2, S5)[1];
+        let Tc4 = defferentSeries3(S2, S5)[2];
+        let Tc5 = defferentSeries3(S2, S5)[3];
+        S3 = defferentSeries3(S2, S5)[4];
+        S4 = defferentSeries3(S2, S5)[5];
+        let V3 = defferentSeries3(S2, S5)[6];
+        let V4 = defferentSeries3(S2, S5)[7];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТ СВЕТОФРОВ 3 И 4');
+        console.log('Тц2 = ' + Tc2);
+        console.log('Тц3 = ' + Tc3);
+        console.log('Тц4 = ' + Tc4);
+        console.log('Тц5 = ' + Tc5);
+        console.log('S3 = ' + S3);
+        console.log('S4 = ' + S4);
+        console.log('V3 = ' + V3);
+        console.log('V4 = ' + V4);
+        S3 = check(S3, S2)[0];
+        S4 = check(S4, S3)[0];
+        S5 = check(S5, S4)[0];
+    }
+
+    // определение ординаты светофора 6
+    if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
+        Tg3 = identicalSeries(S3, Iz)[0];
+        Thzu6 = identicalSeries(S3, Iz)[1];
+        Szu6 = identicalSeries(S3, Iz)[2];
+        S6 = identicalSeries(S3, Iz)[3];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 6');
+        console.log('Тг3 = ' + Tg3);
+        console.log('Тхзу6 = ' + Thzu6);
+        console.log('Sзу6 = ' + Szu6);
+        console.log('S6 = ' + S6);
+        S6 = check(S6, S5)[0];
+        let V5 = check(S6, S5)[2];
+        console.log('V5 = ' + V5);
+        if (S6 == 17125 && (S6 - S5 > 1500)) {
+            S7 = 17125;
+            console.log('S6 - S5 > 1500 => S7 = 171+25, S6 = 161+25');
+            S6 = 16125;
+            S6 = check(S7, S6)[1];
+            console.log('V5 = ' + V5);
+            console.log('S6 = ' + S6);
+            if (S6 - S5 > 2200) {
+                S8 = S7;
+                S7 = S6;
+                console.log('S6 - S5 > 2200 => S8 = ' + S8 + ' S7 = ' + S6);
+                let Tc5 = defferentSeries2(S5, S7)[0];
+                let Tc7 = defferentSeries2(S5, S7)[1];
+                let Tc6 = defferentSeries2(S5, S7)[2];
+                S6 = defferentSeries2(S5, S7)[3];
+                console.log('Тц5 = ' + Tc5);
+                console.log('Тц7 = ' + Tc7);
+                console.log('Тц6 = ' + Tc6);
+                console.log('S6 = ' + S6);
+                console.log('V5 = ' + V5);
+            }
+
+            S6 = check(S7, S6)[1];
+            S5 = check(S6, S5)[1];
+            S4 = check(S5, S4)[1];
+            console.log('S6 = ' + S6);
+            console.log('S5 = ' + S5);
+            console.log('S4 = ' + S4);
+            console.log('S3 = ' + S3);
+            console.log('S2 = ' + S2);
+
+        }
+    }
+
+    // определение ординаты светофора 5 (для случая, когда расстояние между 2 и 5 было меньше 3000м)
+    if (S5 == 0) {
+        let Tc4 = defferentSeries2(S4, S6)[0];
+        let Tc6 = defferentSeries2(S4, S6)[1];
+        let Tc5 = defferentSeries2(S4, S6)[2];
+        S5 = defferentSeries2(S4, S6)[3];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5');
+        console.log('Тц4 = ' + Tc4);
+        console.log('Тц6 = ' + Tc6);
+        console.log('Тц5 = ' + Tc5);
+        console.log('S5 = ' + S5);
+        S5 = check(S5, S4)[0];
+        S6 = check(S6, S5)[0];
+        let V4 = check(S5, S4)[2];
+        let V5 = check(S6, S5)[2];
+        console.log('V4 = ' + V4);
+        console.log('V5 = ' + V5);
+    }
+
+    // определение ординаты светофора 7
+    if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
+        Tg4 = identicalSeries(S4, Iz)[0];
+        Thzu7 = identicalSeries(S4, Iz)[1];
+        Szu7 = identicalSeries(S4, Iz)[2];
+        S7 = identicalSeries(S4, Iz)[3];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 7');
+        console.log('Тг4 = ' + Tg4);
+        console.log('Тхзу7 = ' + Thzu7);
+        console.log('Sзу7 = ' + Szu7);
+        console.log('S7 = ' + S7);
+        S7 = check(S7, S6)[0];
+        let V6 = check(S7, S6)[2];
+        console.log('V6 = ' + V6)
+        if (S7 == 17125 && (S7 - S6 > 1500)) {
+            console.log('S7 - S6 > 1500');
+            S8 = 17125;
+            console.log('S8 = ' + S8);
+            S7 = 16125;
+            console.log('S7 = ' + S7);
+            S7 = check(S8, S7)[1];
+            S6 = check(S7, S6)[1];
+            S5 = check(S6, S5)[1];
+            S4 = check(S5, S4)[1];
+            console.log('S7 = ' + S7);
+            console.log('S6 = ' + S6);
+            console.log('S5 = ' + S5);
+            console.log('S4 = ' + S4);
+            console.log('S3 = ' + S3);
+            console.log('S2 = ' + S2);
+        }
+    }
+
+    // определение ординаты светофора 8
+    if (S7 != 17125 && S8 != 17125) {
+        Tg5 = identicalSeries(S5, Iz)[0];
+        Thzu8 = identicalSeries(S5, Iz)[1];
+        Szu8 = identicalSeries(S5, Iz)[2];
+        S8 = identicalSeries(S5, Iz)[3];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 8');
+        console.log('Тг5 = ' + Tg5);
+        console.log('Тхзу8 = ' + Thzu8);
+        console.log('Sзу8 = ' + Szu8);
+        console.log('S8 = ' + S8);
+        S8 = check(S8, S7)[0];
+        let V7 = check(S8, S7)[2];
+        console.log('V7 = ' + V7);
+        if (S8 == 17125 && (S8 - S7 > 1500)) {
+            console.log('S8 - S7 > 1500');
+            S9 = 17125;
+            console.log('S9 = ' + S9);
+            S8 = 16125;
+            console.log('S8 = ' + S8);
+            S8 = check(S9, S8)[1];
+            S7 = check(S8, S7)[1];
+            S6 = check(S7, S6)[1];
+            S5 = check(S6, S5)[1];
+            S4 = check(S5, S4)[1];
+            console.log('S8 = ' + S8);
+            console.log('S7 = ' + S7);
+            console.log('S6 = ' + S6);
+            console.log('S5 = ' + S5);
+            console.log('S4 = ' + S4);
+            console.log('S3 = ' + S3);
+            console.log('S2 = ' + S2);
+        }
+        S7 = check(S8, S7)[1];
+        S6 = check(S7, S6)[1];
+        S5 = check(S6, S5)[1];
+        S4 = check(S5, S4)[1];
+        console.log('S7 = ' + S7);
+        console.log('S6 = ' + S6);
+        console.log('S5 = ' + S5);
+        console.log('S4 = ' + S4);
+        console.log('S3 = ' + S3);
+        console.log('S2 = ' + S2);
+    }
+
+    // определение ординаты светофора 9
+    if (S7 != 17125 && S8 != 17125 && S9 != 17125) {
+        Tg6 = identicalSeries(S6, Iz)[0];
+        Thzu9 = identicalSeries(S6, Iz)[1];
+        Szu9 = identicalSeries(S6, Iz)[2];
+        S9 = identicalSeries(S6, Iz)[3];
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 9');
+        console.log('Тг6 = ' + Tg6);
+        console.log('Тхзу9 = ' + Thzu9);
+        console.log('Sзу9 = ' + Szu9);
+        console.log('S9 = ' + S9);
+        S9 = check(S9, S8)[0];
+        let V8 = check(S9, S8)[2];
+        console.log('V8 = ' + V8);
+        if (S9 == 17125 && (S9 - S8 > 1500)) {
+            console.log('S9 - S8 > 1500');
+            S10 = 17125;
+            console.log('S10 = ' + S10);
+            S9 = 16125;
+            console.log('S9 = ' + S9);
+            S9 = check(S10, S9)[1];
+            S8 = check(S9, S8)[1];
+            S7 = check(S8, S7)[1];
+            S6 = check(S7, S6)[1];
+            S5 = check(S6, S5)[1];
+            S4 = check(S5, S4)[1];
+            console.log('S9 = ' + S9);
+            console.log('S8 = ' + S8);
+            console.log('S7 = ' + S7);
+            console.log('S6 = ' + S6);
+            console.log('S5 = ' + S5);
+            console.log('S4 = ' + S4);
+            console.log('S3 = ' + S3);
+            console.log('S2 = ' + S2);
+        }
+    }
+}
