@@ -592,7 +592,7 @@ const mass: number[][] = [
 ];
 
 // функция, преобразующая столбцы двумерного массива в одномерные массивы
-function ColumnToRow(arr, colu): number[] {
+function ColumnToRow(arr: number[][], colu: number): number[] {
     let newArr: number[] = [];
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i][colu]);
@@ -656,68 +656,68 @@ lzuv.addEventListener('keydown', function(e) {
 })
 
 // функция определения ординаты светофоров одинаковой серии
-function identicalSeries(Sg1, Iz) {
-    let Tg1, Thzu4, Szu4, S4;
-    Tg1 = +t[srchInArr(Sg, Sg1)[0]];
-    Thzu4 = +((+Tg1 + (Iz * 0.9 * 60)).toFixed(1));
+function identicalSeries(Sg1: number, Iz: number): number[] {
+    let Tg1: number, Thzu4: number, Szu4: number, S4: number;
+    Tg1 = t[srchInArr(Sg, Sg1)[0]];
+    Thzu4 = +((Tg1 + (Iz * 0.9 * 60)).toFixed(1));
     if (Thzu4 >= 591.2) {
         return [Tg1, Thzu4, 17125 + lzu, 17125];
     }
-    Szu4 = +Sh[srchInArr(t, Thzu4)[0]];
+    Szu4 = Sh[srchInArr(t, Thzu4)[0]];
     S4 = Szu4 - lzu;
     return [Tg1, Thzu4, Szu4, S4];
 }
 
-// // функция определения ординат светофоров разных серий (для 3х блок-участков)
-// function defferentSeries3(Sc1, Sc4) {
-//     let Tc1, Tc2, Tc3, Tc4, S2, S3, V2, V3;
-//     Tc1 = t[srchInArr(Sc, Sc1)[0]];
-//     Tc4 = t[srchInArr(Sc, Sc4)[0]];
-//     Tc2 = +Tc1 + (Tc4 - Tc1) / 3;
-//     Tc3 = +Tc4 - (Tc4 - Tc1) / 3;
-//     S2 = Sc[srchInArr(t, Tc2)[0]];
-//     S3 = Sc[srchInArr(t, Tc3)[0]];
-//     V2 = V[srchInArr(t, Tc2)[0]];
-//     V3 = V[srchInArr(t, Tc3)[0]];
-//     return [Tc1, Tc2, Tc3, Tc4, S2, S3, V2, V3];
-// }
-//
-// // функция определения ординат светофоров разных серий (для 2х блок-участков)
-// function defferentSeries2(Sc1, Sc3) {
-//     let Tc1, Tc2, Tc3, S2, V2;
-//     Tc1 = t[srchInArr(Sc, Sc1)[0]];
-//     Tc3 = t[srchInArr(Sc, Sc3)[0]];
-//     Tc2 = +Tc1 + (Tc3 - Tc1) / 2;
-//     S2 = Sc[srchInArr(t, Tc2)[0]];
-//     V2 = V[srchInArr(t, Tc2)[0]];
-//     return [Tc1, Tc3, Tc2, S2, V2];
-// }
-//
-// // функция проверки условий
-// function check(S2, S1) {
-//     if (S2 != 17125 && (S2 - S1 > 2200) && S5 != 0) {
-//         console.log(`${S2} - ${S1} = ${(S2 - S1)} > 2200`);
-//         console.log(S1 + 2200);
-//         S2 = S1 + 2200;
-//     }
-//
-//     let Vg1 = V[srchInArr(Sg, S1)[0]];
-//     if (Vg1 >= 80 && (S2 - S1 < 1469)) {
-//         S1 = S2 - 1469;
-//     } else if (Vg1 >= 70 && (S2 - S1 < 1163)) {
-//         S1 = S2 - 1469;
-//     } else if (Vg1 >= 60 && (S2 - S1 < 919)) {
-//         S1 = S2 - 1000;
-//     }
-//     if (S2 - S1 < 1000) {
-//         Iz += 0.25;
-//         console.log('Iз = ' + Iz);
-//         calcBU();
-//         return [S2, S1];
-//     }
-//     return [S2, S1, Vg1];
-// }
-//
+// функция определения ординат светофоров разных серий (для 3х блок-участков)
+function defferentSeries3(Sc1: number, Sc4: number): number[] {
+    let Tc1: number, Tc2: number, Tc3: number, Tc4: number, S2: number, S3: number, V2: number, V3: number;
+    Tc1 = t[srchInArr(Sc, Sc1)[0]];
+    Tc4 = t[srchInArr(Sc, Sc4)[0]];
+    Tc2 = Tc1 + (Tc4 - Tc1) / 3;
+    Tc3 = Tc4 - (Tc4 - Tc1) / 3;
+    S2 = Sc[srchInArr(t, Tc2)[0]];
+    S3 = Sc[srchInArr(t, Tc3)[0]];
+    V2 = V[srchInArr(t, Tc2)[0]];
+    V3 = V[srchInArr(t, Tc3)[0]];
+    return [Tc1, Tc2, Tc3, Tc4, S2, S3, V2, V3];
+}
+
+// функция определения ординат светофоров разных серий (для 2х блок-участков)
+function defferentSeries2(Sc1: number, Sc3: number): number[] {
+    let Tc1: number, Tc2: number, Tc3: number, S2: number, V2: number;
+    Tc1 = t[srchInArr(Sc, Sc1)[0]];
+    Tc3 = t[srchInArr(Sc, Sc3)[0]];
+    Tc2 = +Tc1 + (Tc3 - Tc1) / 2;
+    S2 = Sc[srchInArr(t, Tc2)[0]];
+    V2 = V[srchInArr(t, Tc2)[0]];
+    return [Tc1, Tc3, Tc2, S2, V2];
+}
+
+// функция проверки условий
+function check(S2: number, S1: number): number[] {
+    if (S2 != 17125 && (S2 - S1 > 2200) && S5 != 0) {
+        console.log(`${S2} - ${S1} = ${(S2 - S1)} > 2200`);
+        console.log(S1 + 2200);
+        S2 = S1 + 2200;
+    }
+
+    let Vg1 = V[srchInArr(Sg, S1)[0]];
+    if (Vg1 >= 80 && (S2 - S1 < 1469)) {
+        S1 = S2 - 1469;
+    } else if (Vg1 >= 70 && (S2 - S1 < 1163)) {
+        S1 = S2 - 1469;
+    } else if (Vg1 >= 60 && (S2 - S1 < 919)) {
+        S1 = S2 - 1000;
+    }
+    if (S2 - S1 < 1000) {
+        Iz += 0.25;
+        console.log('Iз = ' + Iz);
+        calcBU();
+        return [S2, S1];
+    }
+    return [S2, S1, Vg1];
+}
+
 // function calcBU() {
 //     Ir = Iz * 0.9 * 60;
 //     console.log('Iз = ' + Iz);
