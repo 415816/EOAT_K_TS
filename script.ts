@@ -731,7 +731,7 @@ function calcBU() {
     S5 = identicalSeries(S2, Iz)[3];
     console.log('Тг2 = ' + Tg2);
     console.log('Тхзу5 = ' + Thzu5);
-    console.log('Тхзу5 = ' + Szu5);
+    console.log('Sхзу5 = ' + Szu5);
     console.log('S5 = ' + S5);
 
     // определение ординаты светофора 3 (для случая, когда расстояние между 2 и 5 меньше 3000м)
