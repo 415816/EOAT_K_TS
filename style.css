@@ -1,0 +1,13 @@
+.fl{
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+}
+
+.but{
+    margin: 5px 30px 5px 30px;
+}

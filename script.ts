@@ -673,12 +673,12 @@ function defferentSeries3(Sc1: number, Sc4: number): number[] {
     let Tc1: number, Tc2: number, Tc3: number, Tc4: number, S2: number, S3: number, V2: number, V3: number;
     Tc1 = t[srchInArr(Sc, Sc1)[0]];
     Tc4 = t[srchInArr(Sc, Sc4)[0]];
-    Tc2 = Tc1 + (Tc4 - Tc1) / 3;
-    Tc3 = Tc4 - (Tc4 - Tc1) / 3;
+    Tc2 = Number((Tc1 + (Tc4 - Tc1) / 3).toFixed(2));
+    Tc3 = Number ((Tc4 - (Tc4 - Tc1) / 3).toFixed(2));
     S2 = Sc[srchInArr(t, Tc2)[0]];
     S3 = Sc[srchInArr(t, Tc3)[0]];
-    V2 = V[srchInArr(t, Tc2)[0]];
-    V3 = V[srchInArr(t, Tc3)[0]];
+    V2 = V[srchInArr(Sg, S2)[0]];
+    V3 = V[srchInArr(Sg, S3)[0]];
     return [Tc1, Tc2, Tc3, Tc4, S2, S3, V2, V3];
 }
 
@@ -689,7 +689,7 @@ function defferentSeries2(Sc1: number, Sc3: number): number[] {
     Tc3 = t[srchInArr(Sc, Sc3)[0]];
     Tc2 = +Tc1 + (Tc3 - Tc1) / 2;
     S2 = Sc[srchInArr(t, Tc2)[0]];
-    V2 = V[srchInArr(t, Tc2)[0]];
+    V2 = V[srchInArr(Sg, S2)[0]];
     return [Tc1, Tc3, Tc2, S2, V2];
 }
 
@@ -719,7 +719,7 @@ function check(S2: number, S1: number): number[] {
 }
 
 function calcBU() {
-    Ir = Iz * 0.9 * 60;
+    Ir = Number((Iz * 0.9 * 60).toFixed(2));
     console.log('Iз = ' + Iz);
     console.log('Ip = ' + Ir);
     console.log('lзу = ' + lzu);
