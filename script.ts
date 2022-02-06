@@ -687,7 +687,7 @@ function defferentSeries2(Sc1: number, Sc3: number): number[] {
     let Tc1: number, Tc2: number, Tc3: number, S2: number, V2: number;
     Tc1 = t[srchInArr(Sc, Sc1)[0]];
     Tc3 = t[srchInArr(Sc, Sc3)[0]];
-    Tc2 = +Tc1 + (Tc3 - Tc1) / 2;
+    Tc2 = +(Tc1 + (Tc3 - Tc1) / 2).toFixed(2);
     S2 = Sc[srchInArr(t, Tc2)[0]];
     V2 = V[srchInArr(Sg, S2)[0]];
     return [Tc1, Tc3, Tc2, S2, V2];
@@ -696,7 +696,7 @@ function defferentSeries2(Sc1: number, Sc3: number): number[] {
 // функция проверки условий
 function check(S2: number, S1: number): number[] {
     if (S2 != 17125 && (S2 - S1 > 2200) && S5 != 0) {
-        console.log(`${S2} - ${S1} = ${(S2 - S1)} > 2200`);
+        console.log(`${S2} - ${S1} = ${Number((S2 - S1).toFixed(2))} > 2200`);
         console.log(S1 + 2200);
         S2 = S1 + 2200;
     }
@@ -788,7 +788,7 @@ function calcBU() {
         Tg3 = identicalSeries(S3, Iz)[0];
         Thzu6 = identicalSeries(S3, Iz)[1];
         Szu6 = identicalSeries(S3, Iz)[2];
-        S6 = identicalSeries(S3, Iz)[3];
+        S6 = Number((identicalSeries(S3, Iz)[3]).toFixed(2));
         console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 6');
         console.log('Тг3 = ' + Tg3);
         console.log('Тхзу6 = ' + Thzu6);
